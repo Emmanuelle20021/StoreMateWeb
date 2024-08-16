@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Mate</title>
+    <link rel="icon" href="/public/images/favicon.ico" type="image/png">
+    <style>
+        *{
+            --primary-color: #FE5000;
+            --background-color: #F5F5F5;
+            --background-secondary-color: #F4F4F4;
+            --text-color: #333;
+            --text-color-light: #666;
+            --hero-image: url('/public/images/hero-image.webp');
+            --section-height: 500px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .5rem 2rem;
+            background-color: var(--background-color);
+            color: white;
+
+            & .logo-container{
+                img{
+                    width: 50px;
+                }
+            }
+            & .navbar{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & .nav-list{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    list-style: none;
+                    text-align: center;
+                    & .nav-item{
+                        display: flex;
+                        width: 100%;
+                        margin-right: 1rem;
+                        & a{
+                            text-decoration: none;
+                            color: var(--text-color);
+                        }
+                    }
+                    & .nav-item:hover{
+                        & a{
+                            color: var(--primary-color);
+                        }
+                    }
+                }
+            } 
+        }
+
+        .hero{
+            display: flex;
+            background-color: var(--primary-color);
+            background-image: var(--hero-image);
+            background-size: cover;
+            
+            min-height: var(--section-height);
+            text-align: center;
+
+            & .shadow-container{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 2rem;
+                justify-content: center;
+                color: var(--background-color);
+                align-items: center ;
+            
+                & h1{
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
+                    & span{
+                        color: var(--primary-color);
+                    }
+                }
+                & p{
+                    font-size: 1.2rem;
+                    margin-bottom: 3rem;
+                }
+                & button{
+                    padding: 0.5rem 1rem;
+                    background-color: var(--primary-color);
+                    color: var(--background-color);
+                    border-radius: 5px;
+                    border: none;
+                    cursor: pointer;
+                    width: 200px;
+                    font-weight: bold;
+                }
+                & button:hover{
+                    background-color: #FF6D00;
+                }
+            }
+        }
+        .features{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            min-height: var(--section-height);
+            padding: 2rem;
+            text-align: center;
+            & h2{
+                margin-bottom: 2rem;
+            }
+            & .grid-features{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+                justify-content: center;
+                & .feature-card{
+                    padding: 1rem;
+                    background-color: var(--background-color);
+                    border-radius: 5px;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                    & h3{
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+        .why{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--background-secondary-color);
+            padding: 2rem;
+            min-height: var(--section-height);
+            text-align: center;
+            & h2{
+                margin-bottom: 2rem;
+            }
+            & .reason-list{
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                list-style: none;
+                & .reason{
+                    padding: 1rem;
+
+                    & span{
+                        font-weight: bold;
+                        color: var(--primary-color);
+                    }
+                }
+            }
+        }
+        .download-section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: var(--section-height);
+            padding: 2rem;
+            & h2{
+                margin-bottom: 2rem;
+                & span{
+                    color: var(--primary-color);
+                }
+            }
+            & .icon-button{
+                background-color: transparent;
+                border: none;
+                display: flex;
+                position: relative;
+                & span{
+                    display: none;
+                }
+            }
+            & .icon-button:hover{
+                cursor: pointer;
+                    & span{
+                        display: inline-block;
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background-color: var(--background-color);
+                        padding: 0.5rem;
+                        border-radius: 5px;
+                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                    }
+            }
+            & .store-icons{
+                display: flex;
+                gap: 3rem;
+                & img{
+                    width: 50px;
+                }
+            }
+        }
+        .footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--background-color);
+            padding: 1rem;
+            & p{
+                color: var(--text-color-light);
+            }
+        }
+    </style>
+</head>
+<body>
+    <Header class="header" >
+        <div class="logo-container">
+            <img src="/public/images/logo.png" alt="Logo StoreMate" loading="lazy">
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#features">Características</a></li>
+                <li class="nav-item"><a href="#why">¿Por qué StoreMate?</a></li>
+                <li class="nav-item"><a href="#downloads" id="download-anchor">Descarga</a></li>
+            </ul>
+        </nav>
+    </Header>
+    <section class="hero" id="hero">
+        <div class="shadow-container">
+            <h1>Simplifica tus ventas con <span>StoreMate</span></h1>
+            <p>El punto de venta móvil que te permite agregar productos, generar QR y realizar ventas de manera rápida y eficiente</p>
+            <Button id="hero-download-button">
+                Descargar ahora
+            </Button>
+        </div>
+    </section>
+    <section class="features" id="features">
+        <h2>Características Principales</h2>
+        <div class="grid-features">
+            <article class="feature-card">
+                <h3>Agregar Productos</h3>
+                <p>Añade productos fácilmente a tu inventario</p>
+            </article>
+            <article class="feature-card">
+                <h3>Generación de QR</h3>
+                <p>Genera códigos QR únicos para cada producto</p>
+            </article>
+            <article class="feature-card">
+                <h3>Escaneo de QR</h3>
+                <p>Escanea los códigos QR para añadir productos a la venta en un instante</p>
+            </article>
+            <article class="feature-card">
+                <h3>Interfaz Intuitiva</h3>
+                <p>Diseñado para ser fácil de usar, incluso para principiantes</p>
+            </article>
+        </div>
+    </section>
+    <section class="why" id="why">
+        <h2>¿Por qué StoreMate?</h2>
+        <ul class="reason-list">
+            <li class="reason">
+                <span>Eficiencia</span>
+                <p>Ahorra tiempo en cada transacción</p>
+            </li>
+            <li class="reason">
+                <span>Portabilidad</span>
+                <p>Lleva tu punto de venta contigo a donde vayas</p>
+            </li>
+            <li class="reason">
+                <span>Seguridad</span>
+                <p>Mantén tus datos seguros con StoreMate</p>
+            </li>
+        </ul>
+    </section>
+    <section class="download-section" id="downloads">
+        <h2>Descarga <span>StoreMate</span> Hoy</h2>
+        <div class="store-icons" >
+            <button class="download-android icon-button">
+                <img src="/public/images/google-play-brands-solid.svg" alt="StoreMate en Google Play">
+                <span>Descarga para android</span>
+            </button>
+            <button class="download-iphone icon-button">
+                <img src="/public/images/app-store-brands-solid.svg" alt="StoreMate en App Store" >
+                <span>Descarga para iPhone</span>
+            </button>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>StoreMate &copy; 2024</p>
+    </footer>
+    <script>
+        document.getElementById('hero-download-button').addEventListener('click', () => {
+            document.getElementById('download-anchor').click();
+        });
+    </script>
+</body>
+</html>
